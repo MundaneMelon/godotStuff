@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://uba6iplm2fiu"]
+
+[ext_resource type="Texture2D" uid="uid://dg6ur1pr448la" path="res://gagita.png" id="1_1xulf"]
+[ext_resource type="Script" uid="uid://b0usnbmgs78ro" path="res://gagita.gd" id="2_k46gj"]
+
+[node name="Gagita" type="Sprite2D" unique_id=1084264700]
+texture = ExtResource("1_1xulf")
+script = ExtResource("2_k46gj")

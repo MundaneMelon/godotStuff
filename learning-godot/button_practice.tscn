@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cldpv7gec5efx"]
+
+[ext_resource type="PackedScene" uid="uid://uba6iplm2fiu" path="res://gagitagal.tscn" id="1_p0c4t"]
+
+[node name="Node2D" type="Node2D" unique_id=268770043]
+
+[node name="Gagita" parent="." unique_id=1084264700 instance=ExtResource("1_p0c4t")]
+position = Vector2(420, 329)
+
+[node name="Button" type="Button" parent="Gagita" unique_id=1461918356]
+offset_left = -404.0
+offset_top = -284.0
+offset_right = -234.0
+offset_bottom = -206.0
+text = "Toggle Motion"
+
+[node name="Button2" type="Button" parent="Gagita" unique_id=359787862]
+offset_left = -219.0
+offset_top = -283.0
+offset_right = -157.0
+offset_bottom = -205.0
+text = "Scale +"
+
+[node name="Button3" type="Button" parent="Gagita" unique_id=834887011]
+offset_left = -140.0
+offset_top = -283.0
+offset_right = -78.0
+offset_bottom = -205.0
+text = "Scale -"
+
+[node name="Button4" type="Button" parent="Gagita" unique_id=79931357]
+offset_left = -220.0
+offset_top = -195.0
+offset_right = -151.0
+offset_bottom = -117.0
+text = "Speed +"
+
+[node name="Button5" type="Button" parent="Gagita" unique_id=1806436612]
+offset_left = -142.0
+offset_top = -196.0
+offset_right = -77.0
+offset_bottom = -118.0
+text = "Speed -"
+
+[connection signal="pressed" from="Gagita/Button" to="Gagita" method="_on_button_pressed" binds= [&"toggle_movement"]]
+[connection signal="pressed" from="Gagita/Button2" to="Gagita" method="_on_button_pressed" binds= [&"scale_plus"]]
+[connection signal="pressed" from="Gagita/Button3" to="Gagita" method="_on_button_pressed" binds= [&"scale_minus"]]
+[connection signal="pressed" from="Gagita/Button4" to="Gagita" method="_on_button_pressed" binds= [&"speed_plus"]]
+[connection signal="pressed" from="Gagita/Button5" to="Gagita" method="_on_button_pressed" binds= [&"speed_minus"]]

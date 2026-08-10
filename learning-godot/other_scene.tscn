@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c6n1cxrftvqre"]
+
+[ext_resource type="PackedScene" uid="uid://bjvq3b8t3gx53" path="res://button_gagita.tscn" id="1_g2s51"]
+
+[node name="Node2D" type="Node2D" unique_id=663334652]
+
+[node name="Node2D" parent="." unique_id=268770043 instance=ExtResource("1_g2s51")]

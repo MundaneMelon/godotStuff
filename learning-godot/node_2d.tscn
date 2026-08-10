@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ccu67o616812q"]
+
+[ext_resource type="Texture2D" uid="uid://dg6ur1pr448la" path="res://gagita.png" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://b0usnbmgs78ro" path="res://gagita.gd" id="2_0e48y"]
+
+[node name="Node2D" type="Node2D" unique_id=2062393608]
+
+[node name="Label" type="Label" parent="." unique_id=683165534]
+offset_left = -18.0
+offset_top = 70.0
+offset_right = 774.0
+offset_bottom = 338.0
+text = "Whore"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gagita" type="Sprite2D" parent="." unique_id=1049707634]
+position = Vector2(575, 291)
+texture = ExtResource("1_wtcfe")
+script = ExtResource("2_0e48y")

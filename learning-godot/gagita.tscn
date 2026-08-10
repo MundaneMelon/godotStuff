@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dk2j6m6jjpj7d"]
+
+[ext_resource type="Script" uid="uid://t2i015g1e8ul" path="res://label.gd" id="1_1mccb"]
+[ext_resource type="PackedScene" uid="uid://uba6iplm2fiu" path="res://gagitagal.tscn" id="2_0r7wx"]
+
+[sub_resource type="Theme" id="Theme_1mccb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b2onc"]
+
+[node name="Node2D" type="Node2D" unique_id=2062393608]
+
+[node name="Label" type="Label" parent="." unique_id=683165534]
+offset_left = -18.0
+offset_top = 70.0
+offset_right = 774.0
+offset_bottom = 338.0
+theme = SubResource("Theme_1mccb")
+theme_override_font_sizes/font_size = 17
+text = "Whore"
+label_settings = SubResource("LabelSettings_b2onc")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_1mccb")
+
+[node name="Gagita" parent="." unique_id=1084264700 instance=ExtResource("2_0r7wx")]
+position = Vector2(575, 291)

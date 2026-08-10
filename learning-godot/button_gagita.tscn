@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bjvq3b8t3gx53"]
+
+[ext_resource type="PackedScene" uid="uid://uba6iplm2fiu" path="res://gagitagal.tscn" id="1_whkrq"]
+[ext_resource type="Texture2D" uid="uid://3bn0vblrcs24" path="res://wojack.png" id="2_3g4rh"]
+[ext_resource type="Script" uid="uid://i8h87vdo4yg3" path="res://wojack.gd" id="3_be0h7"]
+
+[node name="Node2D" type="Node2D" unique_id=268770043]
+
+[node name="Gagita" parent="." unique_id=1084264700 instance=ExtResource("1_whkrq")]
+position = Vector2(420, 329)
+
+[node name="Timer" type="Timer" parent="Gagita" unique_id=2004914412]
+autostart = true
+
+[node name="Button" type="Button" parent="." unique_id=1461918356]
+offset_left = 16.0
+offset_top = 45.0
+offset_right = 186.0
+offset_bottom = 123.0
+text = "Toggle Motion"
+
+[node name="Button2" type="Button" parent="." unique_id=359787862]
+offset_left = 201.0
+offset_top = 46.0
+offset_right = 263.0
+offset_bottom = 124.0
+text = "Scale +"
+
+[node name="Button3" type="Button" parent="." unique_id=834887011]
+offset_left = 280.0
+offset_top = 46.0
+offset_right = 342.0
+offset_bottom = 124.0
+text = "Scale -"
+
+[node name="Button4" type="Button" parent="." unique_id=79931357]
+offset_left = 200.0
+offset_top = 134.0
+offset_right = 269.0
+offset_bottom = 212.0
+text = "Speed +"
+
+[node name="Button5" type="Button" parent="." unique_id=1806436612]
+offset_left = 278.0
+offset_top = 133.0
+offset_right = 343.0
+offset_bottom = 211.0
+text = "Speed -"
+
+[node name="Wojack" type="Sprite2D" parent="." unique_id=1699881213]
+visible = false
+position = Vector2(1011, 509)
+scale = Vector2(0.55020076, 0.55020076)
+texture = ExtResource("2_3g4rh")
+script = ExtResource("3_be0h7")
+metadata/_edit_lock_ = true
+
+[connection signal="not_fast" from="Gagita" to="Wojack" method="_on_gagita_not_fast"]
+[connection signal="super_fast" from="Gagita" to="Wojack" method="_on_gagita_super_fast"]
+[connection signal="pressed" from="Button" to="Gagita" method="_on_button_pressed" binds= [&"toggle_movement"]]
+[connection signal="pressed" from="Button2" to="Gagita" method="_on_button_pressed" binds= [&"scale_plus"]]
+[connection signal="pressed" from="Button3" to="Gagita" method="_on_button_pressed" binds= [&"scale_minus"]]
+[connection signal="pressed" from="Button4" to="Gagita" method="_on_button_pressed" binds= [&"speed_plus"]]
+[connection signal="pressed" from="Button5" to="Gagita" method="_on_button_pressed" binds= [&"speed_minus"]]
