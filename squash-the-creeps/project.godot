@@ -11,11 +11,18 @@ config_version=5
 [application]
 
 config/name="Squash the Creeps"
+run/main_scene="uid://b2a7opd01ecwn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MusicPlayer="*uid://bgxh161ihhelb"
+
 [display]
 
+window/size/viewport_width=720
+window/size/viewport_height=540
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -55,6 +62,12 @@ jump={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="player"
+3d_physics/layer_2="enemies"
+3d_physics/layer_3="world"
 
 [physics]
 
