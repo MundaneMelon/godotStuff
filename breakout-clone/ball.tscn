@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dxvgmyloki5or"]
+
+[ext_resource type="Script" uid="uid://dgwr5x812j0sn" path="res://ball.gd" id="1_41u45"]
+[ext_resource type="Texture2D" uid="uid://cip43qinl4awd" path="res://art/blue_ball.png" id="1_x8fbi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lduaa"]
+radius = 26.0
+
+[node name="Ball" type="Area2D" unique_id=1628645594]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_41u45")
+speed = 200.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=355593303]
+scale = Vector2(0.05, 0.048)
+texture = ExtResource("1_x8fbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1884183004]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_lduaa")

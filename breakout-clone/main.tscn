@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cdndadkhnjrf6"]
+
+[ext_resource type="Script" uid="uid://btwsnw78a5njs" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://csstmvrvplrw3" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dxvgmyloki5or" path="res://ball.tscn" id="2_0xm2m"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0xm2m"]
+a = Vector2(0, -44.26836)
+b = Vector2(-0.31430656, 51.048203)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h2yge"]
+a = Vector2(-0.89004517, -59.5358)
+b = Vector2(-0.89004517, 68.61301)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1bvp3"]
+a = Vector2(-326, 2)
+b = Vector2(321, 2)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f7q83"]
+a = Vector2(-324, 2)
+b = Vector2(316, 0)
+
+[node name="Main" type="Node2D" unique_id=1060690647]
+script = ExtResource("1_h2yge")
+BALL_SCENE = ExtResource("2_0xm2m")
+
+[node name="Player" parent="." unique_id=56179085 instance=ExtResource("1_ig7tw")]
+position = Vector2(326, 457)
+rotation = -0.002330182
+
+[node name="Ball" parent="." unique_id=1628645594 instance=ExtResource("2_0xm2m")]
+position = Vector2(321, 347.00003)
+scale = Vector2(0.47749716, 0.4945643)
+collision_layer = 3
+collision_mask = 3
+speed = 300.0
+
+[node name="Walls" type="Area2D" parent="." unique_id=283536719]
+scale = Vector2(0.99688476, 1.0097799)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=297635400]
+position = Vector2(0, 223)
+scale = Vector2(3.181607, 5.0148683)
+shape = SubResource("SegmentShape2D_0xm2m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=1535242189]
+position = Vector2(642, 223)
+scale = Vector2(2.2470634, 3.745645)
+shape = SubResource("SegmentShape2D_h2yge")
+
+[node name="Ceiling" type="Area2D" parent="." unique_id=1477010949]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling" unique_id=380018922]
+position = Vector2(323, 0)
+shape = SubResource("SegmentShape2D_1bvp3")
+
+[node name="Floor" type="Area2D" parent="." unique_id=56775495]
+position = Vector2(323, 479)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=656960478]
+shape = SubResource("SegmentShape2D_f7q83")
+
+[connection signal="area_entered" from="Player" to="Ball" method="_on_player_area_entered"]
+[connection signal="body_entered" from="Ball" to="Player" method="_on_ball_body_entered"]
+[connection signal="death" from="Ball" to="." method="_on_ball_death"]
+[connection signal="area_entered" from="Walls" to="Ball" method="_on_walls_area_entered"]
+[connection signal="area_entered" from="Ceiling" to="Ball" method="_on_ceiling_area_entered"]
+[connection signal="area_entered" from="Floor" to="Ball" method="_on_floor_area_entered"]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://csstmvrvplrw3"]
+
+[ext_resource type="Script" uid="uid://c7xja0g6eonmt" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://c73gph4h7gbjf" path="res://art/player_texture.png" id="2_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lduaa"]
+size = Vector2(208, 12)
+
+[node name="Player" type="Area2D" unique_id=448987013]
+script = ExtResource("1_4flbx")
+move_speed = 400.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1300777046]
+modulate = Color(1, 0.43075615, 0.31025386, 1)
+position = Vector2(-0.25, 4.7683716e-07)
+scale = Vector2(1.2738583, 0.30136988)
+texture = ExtResource("2_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439493523]
+position = Vector2(-0.49999237, -5)
+scale = Vector2(0.7796626, 1)
+shape = SubResource("RectangleShape2D_lduaa")
+
+[node name="BallPos" type="Node2D" parent="." unique_id=1901441071]
+position = Vector2(0, -39)
