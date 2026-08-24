@@ -1,8 +1,4 @@
-res://mob.gd
-res://mob.tscn
-res://main.tscn
-res://main.gd
-res://art/mob_body.tres
 res://player.tscn
 res://player.gd
-res://score_label.gd
+res://mob.tscn
+res://mob.gd
